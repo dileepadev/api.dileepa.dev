@@ -2,6 +2,19 @@
 
 This is the API for Dileepa's personal website ([dileepa.dev](https://dileepa.dev)), built with [NestJS](https://nestjs.com/). It provides various endpoints to access information about Dileepa and other related data.
 
+## Tech Stack
+
+* **Framework:** [NestJS](https://nestjs.com/)
+* **Language:** [TypeScript](https://www.typescriptlang.org/)
+* **Runtime:** [Node.js](https://nodejs.org/)
+* **Package Manager:** [npm](https://www.npmjs.com/)
+* **Linting:** [ESLint](https://eslint.org/)
+* **Formatting:** [Prettier](https://prettier.io/)
+* **Database:** [MongoDB](https://www.mongodb.com/) (using [Mongoose](https://mongoosejs.com/))
+* **Deployment:** [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/)
+* **Image Hosting:** [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/)
+* **Documentation:** [Swagger](https://swagger.io/) (using [Swagger UI](https://swagger.io/tools/swagger-ui/))
+
 ## Installation
 
 1. Clone the repository:
