@@ -7,6 +7,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ExperiencesModule } from './experiences/experiences.module';
 import { EducationsModule } from './educations/educations.module';
 import { EventsModule } from './events/events.module';
+import { VideosModule } from './videos/videos.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { EventsModule } from './events/events.module';
     ExperiencesModule,
     EducationsModule,
     EventsModule,
+    VideosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
