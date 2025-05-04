@@ -23,7 +23,7 @@ class LogoDto {
 export class EducationDto {
   @ApiProperty({
     description: 'The name of the course or degree.',
-    example: 'BSc (Hons) in Compting',
+    example: 'BSc (Hons) in Computing',
   })
   @IsString()
   readonly course: string;
