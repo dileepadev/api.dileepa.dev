@@ -24,6 +24,13 @@ export class EventDto {
   readonly location: string;
 
   @ApiProperty({
+    description: 'The format of the event',
+    example: 'In-Person',
+  })
+  @IsString()
+  readonly format: string;
+
+  @ApiProperty({
     description: 'A description of the event',
     example:
       'A beginner-friendly workshop to introduce the fundamentals of Azure cl…',

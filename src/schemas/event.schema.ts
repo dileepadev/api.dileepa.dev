@@ -15,6 +15,9 @@ export class Event {
   location: string;
 
   @Prop({ required: true })
+  format: string;
+
+  @Prop({ required: true })
   description: string;
 }
 
