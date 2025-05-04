@@ -8,6 +8,7 @@ import { ExperiencesModule } from './experiences/experiences.module';
 import { EducationsModule } from './educations/educations.module';
 import { EventsModule } from './events/events.module';
 import { VideosModule } from './videos/videos.module';
+import { BlogsModule } from './blogs/blogs.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { VideosModule } from './videos/videos.module';
     EducationsModule,
     EventsModule,
     VideosModule,
+    BlogsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
