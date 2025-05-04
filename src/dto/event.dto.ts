@@ -2,19 +2,32 @@ import { IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class EventDto {
-  @ApiProperty({ description: 'The title of the event' })
+  @ApiProperty({
+    description: 'The title of the event',
+    example: 'Introduction to Azure',
+  })
   @IsString()
-  title: string;
+  readonly title: string;
 
-  @ApiProperty({ description: 'The date of the event' })
+  @ApiProperty({
+    description: 'The date of the event',
+    example: '2024-02-24',
+  })
   @IsString()
-  date: string;
+  readonly date: string;
 
-  @ApiProperty({ description: 'The location of the event' })
+  @ApiProperty({
+    description: 'The location of the event',
+    example: 'NIBM Colombo',
+  })
   @IsString()
-  location: string;
+  readonly location: string;
 
-  @ApiProperty({ description: 'A description of the event' })
+  @ApiProperty({
+    description: 'A description of the event',
+    example:
+      'A beginner-friendly workshop to introduce the fundamentals of Azure cl…',
+  })
   @IsString()
-  description: string;
+  readonly description: string;
 }

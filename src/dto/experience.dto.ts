@@ -15,7 +15,7 @@ class LogoDto {
       'https://dileepadev.blob.core.windows.net/images/companies/rsl-light.svg',
   })
   @IsUrl()
-  light: string;
+  readonly light: string;
 
   @ApiProperty({
     description: 'URL to the logo for dark mode',
@@ -23,7 +23,7 @@ class LogoDto {
       'https://dileepadev.blob.core.windows.net/images/companies/rsl-dark.svg',
   })
   @IsUrl()
-  dark: string;
+  readonly dark: string;
 }
 
 export class ExperienceDto {
@@ -73,8 +73,11 @@ export class ExperienceDto {
   @IsString({ each: true })
   readonly technologies: string[];
 
-  @ApiProperty({ description: 'Experience logo URLs', type: LogoDto })
+  @ApiProperty({
+    description: 'Experience logo URLs',
+    type: LogoDto,
+  })
   @ValidateNested()
   @Type(() => LogoDto)
-  logo: LogoDto;
+  readonly logo: LogoDto;
 }

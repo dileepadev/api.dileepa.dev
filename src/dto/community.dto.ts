@@ -15,7 +15,7 @@ class LogoDto {
       'https://dileepadev.blob.core.windows.net/images/communities/nibmcs.svg',
   })
   @IsUrl()
-  light: string;
+  readonly light: string;
 
   @ApiProperty({
     description: 'URL to the logo for dark mode',
@@ -23,33 +23,52 @@ class LogoDto {
       'https://dileepadev.blob.core.windows.net/images/communities/nibmcs.svg',
   })
   @IsUrl()
-  dark: string;
+  readonly dark: string;
 }
 
 export class CommunityDto {
-  @ApiProperty({ description: 'The name of the community' })
+  @ApiProperty({
+    description: 'The name of the community',
+    example: 'NIBM Computer Society',
+  })
   @IsString()
-  name: string;
+  readonly name: string;
 
-  @ApiProperty({ description: 'The role held in the community' })
+  @ApiProperty({
+    description: 'The role held in the community',
+    example: 'Founding Member & President',
+  })
   @IsString()
-  role: string;
+  readonly role: string;
 
-  @ApiProperty({ description: 'The period of involvement' })
+  @ApiProperty({
+    description: 'The period of involvement',
+    example: 'Oct 2022 - Dec 2023',
+  })
   @IsString()
-  period: string;
+  readonly period: string;
 
-  @ApiProperty({ description: 'A description of the community involvement' })
+  @ApiProperty({
+    description: 'A description of the community involvement',
+    example:
+      'Led the society in organizing events, workshops, and meetups to foster…',
+  })
   @IsString()
-  description: string;
+  readonly description: string;
 
-  @ApiProperty({ description: 'Community logo URLs', type: LogoDto })
+  @ApiProperty({
+    description: 'Community logo URLs',
+    type: LogoDto,
+  })
   @ValidateNested()
   @Type(() => LogoDto)
-  logo: LogoDto;
+  readonly logo: LogoDto;
 
-  @ApiProperty({ description: 'Whether currently involved', required: false })
+  @ApiProperty({
+    description: 'Whether currently involved',
+    example: true,
+  })
   @IsBoolean()
   @IsOptional()
-  current?: boolean;
+  readonly current?: boolean;
 }

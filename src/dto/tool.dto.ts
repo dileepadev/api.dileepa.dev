@@ -8,14 +8,14 @@ class LogoDto {
     example: 'https://dileepadev.blob.core.windows.net/images/tools/python.svg',
   })
   @IsUrl()
-  light: string;
+  readonly light: string;
 
   @ApiProperty({
     description: 'URL to the image for dark mode',
     example: 'https://dileepadev.blob.core.windows.net/images/tools/python.svg',
   })
   @IsUrl()
-  dark: string;
+  readonly dark: string;
 }
 
 export class ToolDto {
@@ -27,8 +27,11 @@ export class ToolDto {
   @IsNotEmpty()
   readonly name: string;
 
-  @ApiProperty({ description: 'Tools logo URLs', type: LogoDto })
+  @ApiProperty({
+    description: 'Tools logo URLs',
+    type: LogoDto,
+  })
   @ValidateNested()
   @Type(() => LogoDto)
-  logo: LogoDto;
+  readonly logo: LogoDto;
 }

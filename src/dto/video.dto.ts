@@ -2,23 +2,39 @@ import { IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class VideoDto {
-  @ApiProperty({ description: 'The title of the video' })
+  @ApiProperty({
+    description: 'The title of the video',
+    example: 'What is Azure AI',
+  })
   @IsString()
-  title: string;
+  readonly title: string;
 
-  @ApiProperty({ description: 'The view count of the video' })
+  @ApiProperty({
+    description: 'The view count of the video',
+    example: '136 views',
+  })
   @IsString()
-  views: string;
+  readonly views: string;
 
-  @ApiProperty({ description: 'The publication date of the video' })
+  @ApiProperty({
+    description: 'The publication date of the video',
+    example: '2025-02-24',
+  })
   @IsString()
-  date: string;
+  readonly date: string;
 
-  @ApiProperty({ description: 'The link to the video' })
+  @ApiProperty({
+    description: 'The link to the video',
+    example: 'https://www.youtube.com/watch?v=YfrZkAx2Eao',
+  })
   @IsString()
-  link: string;
+  readonly link: string;
 
-  @ApiProperty({ description: 'URL to the video thumbnail' })
+  @ApiProperty({
+    description: 'URL to the video thumbnail',
+    example:
+      'https://dileepadev.blob.core.windows.net/images/videos/v2p2e1_thumbnail.png',
+  })
   @IsString()
-  thumbnail: string;
+  readonly thumbnail: string;
 }

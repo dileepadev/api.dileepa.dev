@@ -9,7 +9,7 @@ class LogoDto {
       'https://dileepadev.blob.core.windows.net/images/Institutions/nibm.svg',
   })
   @IsUrl()
-  light: string;
+  readonly light: string;
 
   @ApiProperty({
     description: 'URL to the logo for dark mode',
@@ -17,7 +17,7 @@ class LogoDto {
       'https://dileepadev.blob.core.windows.net/images/Institutions/nibm.svg',
   })
   @IsUrl()
-  dark: string;
+  readonly dark: string;
 }
 
 export class EducationDto {
@@ -56,8 +56,11 @@ export class EducationDto {
   @IsUrl()
   readonly url?: string;
 
-  @ApiProperty({ description: 'Education logo URLs', type: LogoDto })
+  @ApiProperty({
+    description: 'Education logo URLs',
+    type: LogoDto,
+  })
   @ValidateNested()
   @Type(() => LogoDto)
-  logo: LogoDto;
+  readonly logo: LogoDto;
 }
