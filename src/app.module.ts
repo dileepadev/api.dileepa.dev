@@ -9,6 +9,7 @@ import { EducationsModule } from './educations/educations.module';
 import { EventsModule } from './events/events.module';
 import { VideosModule } from './videos/videos.module';
 import { BlogsModule } from './blogs/blogs.module';
+import { CommunitiesModule } from './communities/communities.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { BlogsModule } from './blogs/blogs.module';
     EventsModule,
     VideosModule,
     BlogsModule,
+    CommunitiesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
