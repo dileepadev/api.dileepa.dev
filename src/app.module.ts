@@ -10,6 +10,7 @@ import { EventsModule } from './events/events.module';
 import { VideosModule } from './videos/videos.module';
 import { BlogsModule } from './blogs/blogs.module';
 import { CommunitiesModule } from './communities/communities.module';
+import { ToolsModule } from './tools/tools.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { CommunitiesModule } from './communities/communities.module';
     VideosModule,
     BlogsModule,
     CommunitiesModule,
+    ToolsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
