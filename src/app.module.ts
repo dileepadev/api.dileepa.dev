@@ -5,6 +5,7 @@ import { AboutModule } from './about/about.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ExperiencesModule } from './experiences/experiences.module';
+import { EducationsModule } from './educations/educations.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { ExperiencesModule } from './experiences/experiences.module';
     }),
     AboutModule,
     ExperiencesModule,
+    EducationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
