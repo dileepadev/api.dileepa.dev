@@ -18,7 +18,7 @@ class ImagesDto {
   readonly profile_webp: string;
 
   @ApiProperty({
-    description: 'URL for the banner image in PNG format',
+    description: 'URL for the banner image in WEBP format',
     example: 'https://dileepadev.blob.core.windows.net/images/banner.webp',
   })
   @IsUrl()
