@@ -1,5 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsObject, ValidateNested, IsUrl } from 'class-validator';
+import {
+  IsString,
+  IsObject,
+  ValidateNested,
+  IsUrl,
+  IsArray,
+} from 'class-validator';
 import { Type } from 'class-transformer';
 
 class ImagesDto {
@@ -86,10 +92,15 @@ export class AboutDto {
 
   @ApiProperty({
     description: 'A short description about the person',
-    example: "Hi! I'm an associate ai engineer focusing on...",
+    example: [
+      "Hi! I'm an associate ai engineer focusing on...",
+      "I'm passionate about...",
+    ],
+    type: [String],
   })
-  @IsString()
-  readonly description: string;
+  @IsArray()
+  @IsString({ each: true })
+  readonly description: string[];
 
   @ApiProperty({
     description: 'Contact email address',

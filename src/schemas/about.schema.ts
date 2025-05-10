@@ -48,8 +48,8 @@ export class About {
   @Prop({ required: true })
   name: string;
 
-  @Prop({ required: true })
-  description: string;
+  @Prop({ required: true, type: [String] })
+  description: string[];
 
   @Prop({ required: true })
   email: string;
