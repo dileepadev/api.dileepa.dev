@@ -6,16 +6,42 @@ export type AboutDocument = HydratedDocument<About>;
 @Schema({ _id: false })
 class Images {
   @Prop({ required: true })
-  profile_png: string;
+  bannerWebp: string;
 
   @Prop({ required: true })
-  profile_webp: string;
+  profilePng: string;
 
   @Prop({ required: true })
-  banner_webp: string;
+  profileWebp: string;
 }
 
 const ImagesSchema = SchemaFactory.createForClass(Images);
+
+@Schema({ _id: false })
+class Links {
+  @Prop({ required: true })
+  website: string;
+
+  @Prop({ required: true })
+  email: string;
+
+  @Prop({ required: true })
+  github: string;
+
+  @Prop({ required: true })
+  linkedin: string;
+
+  @Prop({ required: true })
+  xtwitter: string;
+
+  @Prop({ required: true })
+  instagram: string;
+
+  @Prop({ required: true })
+  youtube: string;
+}
+
+const LinksSchema = SchemaFactory.createForClass(Links);
 
 @Schema({ collection: 'about', timestamps: true })
 export class About {
@@ -33,6 +59,9 @@ export class About {
 
   @Prop({ type: ImagesSchema, required: true })
   images: Images;
+
+  @Prop({ type: LinksSchema, required: true })
+  links: Links;
 }
 
 export const AboutSchema = SchemaFactory.createForClass(About);

@@ -4,25 +4,76 @@ import { Type } from 'class-transformer';
 
 class ImagesDto {
   @ApiProperty({
+    description: 'URL for the banner image in WEBP format',
+    example: 'https://dileepadev.blob.core.windows.net/images/banner.webp',
+  })
+  @IsUrl()
+  readonly bannerWebp: string;
+
+  @ApiProperty({
     description: 'URL for the profile image in PNG format',
     example: 'https://dileepadev.blob.core.windows.net/images/profile.png',
   })
   @IsUrl()
-  readonly profile_png: string;
+  readonly profilePng: string;
 
   @ApiProperty({
     description: 'URL for the profile image in WEBP format',
     example: 'https://dileepadev.blob.core.windows.net/images/profile.webp',
   })
   @IsUrl()
-  readonly profile_webp: string;
+  readonly profileWebp: string;
+}
 
+class LinksDto {
   @ApiProperty({
-    description: 'URL for the banner image in WEBP format',
-    example: 'https://dileepadev.blob.core.windows.net/images/banner.webp',
+    description: 'URL for the website',
+    example: 'https://dileepa.dev',
   })
   @IsUrl()
-  readonly banner_webp: string;
+  readonly website: string;
+
+  @ApiProperty({
+    description: 'Contact email address',
+    example: 'contact@dileepa.dev',
+  })
+  @IsUrl()
+  readonly email: string;
+
+  @ApiProperty({
+    description: 'URL for the GitHub profile',
+    example: 'https://github.com/dileepadev',
+  })
+  @IsUrl()
+  readonly github: string;
+
+  @ApiProperty({
+    description: 'URL for the LinkedIn profile',
+    example: 'https://linkedin.com/in/dileepadev',
+  })
+  @IsUrl()
+  readonly linkedin: string;
+
+  @ApiProperty({
+    description: 'URL for the X/Twitter profile',
+    example: 'https://twitter.com/dileepadev',
+  })
+  @IsUrl()
+  readonly xtwitter: string;
+
+  @ApiProperty({
+    description: 'URL for the Instagram profile',
+    example: 'https://instagram.com/dileepadev',
+  })
+  @IsUrl()
+  readonly instagram: string;
+
+  @ApiProperty({
+    description: 'URL for the YouTube channel',
+    example: 'https://youtube.com/@dileepadev',
+  })
+  @IsUrl()
+  readonly youtube: string;
 }
 
 export class AboutDto {
@@ -62,4 +113,13 @@ export class AboutDto {
   @ValidateNested()
   @Type(() => ImagesDto)
   readonly images: ImagesDto;
+
+  @ApiProperty({
+    description: 'URLs for social and contact links',
+    type: LinksDto,
+  })
+  @IsObject()
+  @ValidateNested()
+  @Type(() => LinksDto)
+  readonly links: LinksDto;
 }
