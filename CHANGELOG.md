@@ -2,13 +2,33 @@
 
 All notable changes to this project are documented in this file.
 
+Changes are organized into the following categories:
+
+- **Added:** New features or functionality introduced to the project.
+- **Changed:** Modifications to existing functionality that do not add new features.
+- **Fixed:** Bug fixes that resolve issues or correct unintended behavior.
+- **Removed:** Features or components that have been removed from the project.
+
 ## [Unreleased]
 
 - Changes for the next release are available in development branches.
 
+## [1.1.0] - 2025-05-12
+
+- **Added:**
+
+  - Add social media and other relevant external links to the `/about` endpoint for better representation.
+  - Add `VERSIONING.md` file to document the versioning strategy and release process for the project.
+
+- **Changed:**
+
+  - Update the `description` field in the `/about` endpoint to support an array of multiple descriptive entries, allowing for more detailed and modular content.
+  - Refactor the DTO (Data Transfer Object) structure to follow `camelCase` naming conventions for consistency with frontend standards.
+  - Update MongoDB queries to return data ordered by date for improved relevance.
+
 ## [1.0.0] - 2025-05-04
 
-- **Added (New features):**
+- **Added**
 
   - Set up initial project structure using [NestJS](https://nestjs.com/) and [TypeScript](https://www.typescriptlang.org/) running on [Node.js](https://nodejs.org/).
   - Built and tested the following RESTful API endpoints:
@@ -29,7 +49,7 @@ All notable changes to this project are documented in this file.
 
 ## [0.0.1] - 2025-05-04
 
-- **Added (New features):**
+- **Added:**
 
   - Initialize project with **NestJS**
   - Add Documentation:
@@ -51,14 +71,16 @@ All notable changes to this project are documented in this file.
       - [`other.md`](https://github.com/dileepadev/api.dileepa.dev/blob/main/.github/ISSUE_TEMPLATE/other.md)
   - Deploy the app to the production environment.
 
-- **Changed (Improvements):**
+- **Changed:**
   
   - Update README.md
 
 <!-- Unreleased -->
+<!-- 1.1.0 -->
 <!-- 1.0.0 -->
 <!-- v0.0.1 -->
 
 [Unreleased]: https://github.com/dileepadev/api.dileepa.dev/branches
+[1.1.0]: https://github.com/dileepadev/api.dileepa.dev/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/dileepadev/api.dileepa.dev/compare/v0.0.1...v1.0.0
 [0.0.1]: https://github.com/dileepadev/api.dileepa.dev/releases/tag/v0.0.1
