@@ -5,6 +5,7 @@ import {
   ValidateNested,
   IsUrl,
   IsArray,
+  IsEmail,
 } from 'class-validator';
 import { Type } from 'class-transformer';
 
@@ -43,7 +44,7 @@ class LinksDto {
     description: 'Contact email address',
     example: 'contact@dileepa.dev',
   })
-  @IsUrl()
+  @IsEmail()
   readonly email: string;
 
   @ApiProperty({
