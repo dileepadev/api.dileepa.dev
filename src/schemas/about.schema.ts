@@ -48,20 +48,23 @@ export class About {
   @Prop({ required: true })
   name: string;
 
-  @Prop({ required: true, type: [String] })
-  description: string[];
-
-  @Prop({ required: true })
-  email: string;
-
   @Prop({ required: true })
   title: string;
+
+  @Prop({ required: true })
+  tagline: string;
+
+  @Prop({ required: true, type: [String] })
+  description: string[];
 
   @Prop({ type: ImagesSchema, required: true })
   images: Images;
 
   @Prop({ type: LinksSchema, required: true })
   links: Links;
+
+  @Prop({ required: true, type: [String] })
+  connect: string[];
 }
 
 export const AboutSchema = SchemaFactory.createForClass(About);

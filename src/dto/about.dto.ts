@@ -91,7 +91,22 @@ export class AboutDto {
   readonly name: string;
 
   @ApiProperty({
-    description: 'A short description about the person',
+    description: 'Current work title or position',
+    example: 'Associate AI Engineer',
+  })
+  @IsString()
+  readonly title: string;
+
+  @ApiProperty({
+    description: 'A short tagline or motto',
+    example:
+      "I'm an Associate AI Engineer passionate about building intelligent solutions that make a difference.",
+  })
+  @IsString()
+  readonly tagline: string;
+
+  @ApiProperty({
+    description: 'Paragraphs detailing the individual.',
     example: [
       "Hi! I'm an associate ai engineer focusing on...",
       "I'm passionate about...",
@@ -101,20 +116,6 @@ export class AboutDto {
   @IsArray()
   @IsString({ each: true })
   readonly description: string[];
-
-  @ApiProperty({
-    description: 'Contact email address',
-    example: 'contact@dleepa.dev',
-  })
-  @IsString()
-  readonly email: string;
-
-  @ApiProperty({
-    description: 'Job title',
-    example: 'Associate AI Engineer',
-  })
-  @IsString()
-  readonly title: string;
 
   @ApiProperty({
     description: 'URLs for profile and banner images',
@@ -133,4 +134,16 @@ export class AboutDto {
   @ValidateNested()
   @Type(() => LinksDto)
   readonly links: LinksDto;
+
+  @ApiProperty({
+    description: 'Messages inviting connection and engagement.',
+    example: [
+      'I love meeting new people and sharing meaningful...',
+      'Whether you have a question, an idea...',
+    ],
+    type: [String],
+  })
+  @IsArray()
+  @IsString({ each: true })
+  readonly connect: string[];
 }
